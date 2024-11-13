@@ -15,3 +15,5 @@ class MainPage(BasePage): # добавляем класс MainPage, которы
     def should_be_login_link(self): # метод, проверяющий наличие ссылки
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
 
+    def __init__(self, *args, **kwargs):
+        super(MainPage, self).__init__(*args, **kwargs) #super вызывает конструктор класса предка и передает ему все те аргументы, которые мы передали в конструктор MainPage

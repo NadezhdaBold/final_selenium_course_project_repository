@@ -16,3 +16,7 @@ class ProductPageLocators():
     ALERT_BASKET_ADD=(By.XPATH,'//div[@id="messages"]')
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
