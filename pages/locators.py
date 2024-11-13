@@ -14,4 +14,5 @@ class ProductPageLocators():
     ALERT_NAME=(By.XPATH,'//*[@id="messages"]/div[1]/div/strong')
     ALERT_PRICE=(By.XPATH,'//div[@class="alert alert-safe alert-noicon alert-info  fade in"]/div/p[1]/strong')
     ALERT_BASKET_ADD=(By.XPATH,'//div[@id="messages"]')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
 
