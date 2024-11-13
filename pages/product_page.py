@@ -20,7 +20,7 @@ class ProductPage(BasePage):
     def should_be_product_price(self):
         pprice = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         pbasket_price = self.browser.find_element(*ProductPageLocators.ALERT_PRICE).text
-        assert pprice == pbasket_price, "{pbasket_price} не соответствует {pprice}"  # проверка, имени продукта в корзине
+        assert pprice == pbasket_price, "{pbasket_price} не соответствует {pprice}"  # проверка, стоимости продукта в корзине
 
     def add_to_basket(self):
         self.browser.find_element(*ProductPageLocators.BASKET_BUTTON).click()
