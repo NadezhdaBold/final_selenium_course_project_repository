@@ -1,1 +1,5 @@
 # final_selenium_course_project_repository
+негативные тесты из занятия п 4.3 шаг 6
+test_guest_cant_see_success_message_after_adding_product_to_basket и
+test_message_disappeared_after_adding_product_to_basket
+вынесены в отдельный файл test_product_negative_checks.py чтобы не перегружать test_product_page.py
