@@ -16,7 +16,7 @@ class BasePage():
     def __init__(self, browser, url, timeout=10):  # конструктор в качестве параметров передаем экземпляр драйвера и url адрес
         self.browser = browser
         self.url = url
-#        self.browser.implicitly_wait(timeout) # добавим команду для неявного ожидания со значением по умолчанию в 10
+        self.browser.implicitly_wait(timeout) # добавим команду для неявного ожидания со значением по умолчанию в 10
 
 
     def open(self): # открыть ссылку в браузере
@@ -61,7 +61,7 @@ class BasePage():
         return True
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID) #надо использовать LOGIN_LINK, чтоб не падал тест test_guest_can_go_to_login_page_from_product_page
         link.click()
 
     def should_be_login_link(self):
@@ -70,3 +70,7 @@ class BasePage():
     def go_to_basket_page(self): # (self) чтобы иметь доступ к атрибутам и методам класса
         basket_link = self.browser.find_element(*MainPageLocators.BASKET_LINK) # Так как браузер хранится как аргумент класса BasePage, обращаться к нему нужно с помощью self
         basket_link.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

@@ -8,5 +8,5 @@ class BasketPage(BasePage):
 
     def should_be_text_basket_is_empty(self):
         basket_text=self.browser.find_element(*BasketPageLocators.BASKET_TEXT).text
-        assert "корзина пуста" in basket_text, "'корзина пуста' not in {basket_text}"
+        assert "empty" in basket_text, f"'empty' not in {basket_text}"
 
